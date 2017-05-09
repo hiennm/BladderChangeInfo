@@ -22,7 +22,7 @@
 }
 
 #logo {
-    height: 8vh;
+    height: 60px;
     float: left;
     margin: 0;
     padding: 0;
@@ -30,14 +30,14 @@
 
     #logo img {
         float: left;
-        height: 6vh;
-        margin: 1vh;
+        height: 38px;
+        margin: 6px;
     }
 
 #system-name {
     height: 10%;
-    font-size: 5vmin;
-    padding-top: 1vh;
+    font-size: 32px;
+    padding-top: 6px;
     font-family: inherit;
     font-weight: bold;
     color: red;
@@ -46,9 +46,9 @@
 
 #count-down-container {
     float: right;
-    margin-right: 2vh;
-    margin-top: 2.5vh;
-    font-size: 3vh;
+    margin-right: 16px;
+    margin-top: 18px;
+    font-size: 18px;
     font-family: Tahoma;
 }
 
@@ -59,7 +59,7 @@
 /**Begin Body section*/
 
 #content {
-    height: 80vh;
+    height: 540px;
     padding: 0;
     margin: 0;
 }
@@ -76,14 +76,8 @@
         text-align: center;
     }
 
-.content-cell {
-    text-align: center;
-    font-size: 4vh;
-    width: 18%;
-}
-
 .header-row {
-    height: 4.27vh;
+    height: 32px;
     text-align:center;
     font-weight:bold;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -92,7 +86,8 @@
 }
 
 .content-row {
-    height: 4vh;
+    height: 28px;
+    font-size: 14px;
 }
 
 .odd-row{
@@ -110,10 +105,6 @@
 
 .danger {
     background-color: red; 
-}
-
-#current-date-time {
-    font-size: 5vh;
 }
 
 /**End of Body section*/
