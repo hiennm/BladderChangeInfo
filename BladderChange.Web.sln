@@ -5,6 +5,16 @@ VisualStudioVersion = 15.0.26403.7
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BladderChange.Web", "BladderChange.Web\BladderChange.Web.csproj", "{EE48849E-5821-470E-9EED-9240273A29ED}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BladderChange.Service", "BladderChange.Service\BladderChange.Service.csproj", "{361B227C-5F7E-46C0-9E95-3EAFD98499F1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BladderChange.Service.Data", "BladderChange.Service.Data\BladderChange.Service.Data.csproj", "{F7683935-41B7-452A-A236-AB2EDD54AC9E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BladderChange.Service.Data.Test", "BladderChange.Service.Data.Test\BladderChange.Service.Data.Test.csproj", "{0D45F60F-FDEF-4B85-9611-8BB2EAC641CD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BladderChange.Web.Data", "BladderChange.Web.Data\BladderChange.Web.Data.csproj", "{0F98ED30-F719-4C82-BB3B-1D5FA5EAD629}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BladderChange.Web.Data.Test", "BladderChange.Web.Data.Test\BladderChange.Web.Data.Test.csproj", "{5898636B-DFAA-4238-80BA-19188AE5D61A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +25,26 @@ Global
 		{EE48849E-5821-470E-9EED-9240273A29ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EE48849E-5821-470E-9EED-9240273A29ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EE48849E-5821-470E-9EED-9240273A29ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{361B227C-5F7E-46C0-9E95-3EAFD98499F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{361B227C-5F7E-46C0-9E95-3EAFD98499F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{361B227C-5F7E-46C0-9E95-3EAFD98499F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{361B227C-5F7E-46C0-9E95-3EAFD98499F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7683935-41B7-452A-A236-AB2EDD54AC9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7683935-41B7-452A-A236-AB2EDD54AC9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7683935-41B7-452A-A236-AB2EDD54AC9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7683935-41B7-452A-A236-AB2EDD54AC9E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D45F60F-FDEF-4B85-9611-8BB2EAC641CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D45F60F-FDEF-4B85-9611-8BB2EAC641CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D45F60F-FDEF-4B85-9611-8BB2EAC641CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D45F60F-FDEF-4B85-9611-8BB2EAC641CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F98ED30-F719-4C82-BB3B-1D5FA5EAD629}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F98ED30-F719-4C82-BB3B-1D5FA5EAD629}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F98ED30-F719-4C82-BB3B-1D5FA5EAD629}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F98ED30-F719-4C82-BB3B-1D5FA5EAD629}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5898636B-DFAA-4238-80BA-19188AE5D61A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5898636B-DFAA-4238-80BA-19188AE5D61A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5898636B-DFAA-4238-80BA-19188AE5D61A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5898636B-DFAA-4238-80BA-19188AE5D61A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

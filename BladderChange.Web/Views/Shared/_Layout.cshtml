@@ -3,39 +3,38 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>@ViewBag.Title</title>
+    <link rel="icon" sizes="16x16 32x32 64x64" href="Images/bridgestone-64.png">
+    <link rel="shortcut icon" href="Images/bridgestone.ico">
+    <title>Bladder Change Info - Curing</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-</head>
-<body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, null)</li>
-                    <li>@Html.ActionLink("API", "Index", "Help", new { area = "" }, null)</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
-    </div>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+    
+    
+</head>
+<body>
+    <div id="container">
+
+        <div id="header">
+            <div id="logo"><img src="~/Images/bridgestone-70_01.png" alt="BS logo" /></div>
+            <div id="system-name">Curing - Bladder Change Info</div>
+            <div id="count-down-container" class="text-info label label-success">Update in <span id="count-down">00:00</span></div>
+        </div>
+
+        <div id="content">
+            
+            @RenderBody()
+
+            
+        </div>
+
+        <div id="footer">
+            <div class="container" style="text-align:center;">
+                <p class="muted credit">&copy; @DateTime.Now.Year - BTMV</p>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

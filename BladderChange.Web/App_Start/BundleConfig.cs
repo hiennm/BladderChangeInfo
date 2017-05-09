@@ -23,6 +23,21 @@ namespace BladderChange.Web
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+
+            //app.js
+            bundles.Add(new ScriptBundle("~/bundles/app").Include(
+                "~/Scripts/app.js"));
+
+            //app-ext.js
+            bundles.Add(new ScriptBundle("~/bundles/app-ext").Include(
+                "~/Scripts/app-ext.js"));
+
+            //DataTables
+            //bundles.Add(new ScriptBundle("~/bundles/datatables").Include(
+            //    "~/Scripts/DataTables/jquery.dataTables.js"));
+
+            //bundles.Add(new StyleBundle("~/Content/datatables").Include(
+            //    "~/Content/DataTables/css/jquery.dataTables.css"));
         }
     }
 }

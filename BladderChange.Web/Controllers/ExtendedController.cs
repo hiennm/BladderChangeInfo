@@ -6,8 +6,9 @@ using System.Web.Mvc;
 
 namespace BladderChange.Web.Controllers
 {
-    public class HomeController : Controller
+    public class ExtendedController : Controller
     {
+        // GET: Extended
         public ActionResult Index()
         {
             return View();
