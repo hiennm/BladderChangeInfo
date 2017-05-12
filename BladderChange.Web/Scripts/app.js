@@ -119,11 +119,9 @@ function loadBladderInfo() {
 }
 
 function formatDate(date) {
-    var d = new Date(date);
-    return d.getFullYear() + '-' + (d.getMonth() + 1) + '-' + d.getDay() + ' '
-        + (d.getHours() < 10 ? '0' + d.getHours() : d.getHours()) + ':'
-        + (d.getMinutes() < 10 ? '0' + d.getMinutes() : d.getMinutes());
+    return date.replace('T', ' ').substr(0, 16);
 }
+
 /**
  * comparision function to sort bladder info items
  * @param {any} infoX
