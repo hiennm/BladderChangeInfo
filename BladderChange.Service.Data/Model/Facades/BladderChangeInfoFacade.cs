@@ -31,13 +31,15 @@ namespace BladderChange.Service.Data.Model.Facades
                 ",[bladder_limit_left]" +
                 ",[bladder_count_left]" +
                 ",[last_change_left]" +
+                ",[change_date_left]" +
                 ",[bladder_name_right]" +
                 ",[bladder_limit_right]" +
                 ",[bladder_count_right]" +
                 ",[last_change_right]" +
+                ",[change_date_right]" +
                 ",[status]" +
                 ",[ins_date]" +
-                ",[upd_date]" +
+                ",[upd_date]" +                
                 "  FROM [dbo].[cur_bladder_change]" +
                 "  WHERE status = 1");
 
@@ -62,13 +64,15 @@ namespace BladderChange.Service.Data.Model.Facades
                                     BladderLimitLeft = reader.IsDBNull(3) ? 0 : reader.GetInt32(3),
                                     BladderCountLeft = reader.IsDBNull(4) ? 0 : reader.GetInt32(4),
                                     LastChangeLeft = reader.IsDBNull(5) ? 0 : reader.GetInt32(5),
-                                    BladderNameRight = reader.IsDBNull(6) ? null : reader.GetString(6),
-                                    BladderLimitRight = reader.IsDBNull(7) ? 0 : reader.GetInt32(7),
-                                    BladderCountRight = reader.IsDBNull(8) ? 0 : reader.GetInt32(8),
-                                    LastChangeRight = reader.IsDBNull(9) ? 0 : reader.GetInt32(9),
-                                    Status = reader.IsDBNull(10) ? false : reader.GetBoolean(10),
-                                    InsDate = reader.GetDateTime(11),
-                                    UpdDate = reader.GetDateTime(12)
+                                    ChangeDateLeft = reader.IsDBNull(6) ? DateTime.Now : reader.GetDateTime(6),
+                                    BladderNameRight = reader.IsDBNull(7) ? null : reader.GetString(7),
+                                    BladderLimitRight = reader.IsDBNull(8) ? 0 : reader.GetInt32(8),
+                                    BladderCountRight = reader.IsDBNull(9) ? 0 : reader.GetInt32(9),
+                                    LastChangeRight = reader.IsDBNull(5) ? 0 : reader.GetInt32(10),
+                                    ChangeDateRight = reader.IsDBNull(11) ? DateTime.Now : reader.GetDateTime(11),
+                                    Status = reader.IsDBNull(12) ? false : reader.GetBoolean(12),
+                                    InsDate = reader.GetDateTime(13),
+                                    UpdDate = reader.GetDateTime(14)                                    
                                 };
                                 list.Add(info);
                             }
@@ -96,11 +100,13 @@ namespace BladderChange.Service.Data.Model.Facades
                 ", bladder_limit_left = @bladder_limit_left" +
                 ", bladder_count_left = @bladder_count_left" +
                 ", last_change_left = @last_change_left" +
+                ", change_date_left = @change_date_left" +
                 ", bladder_name_right = @bladder_name_right" +
                 ", bladder_limit_right = @bladder_limit_right" +
                 ", bladder_count_right = @bladder_count_right" +
                 ", last_change_right = @last_change_right" +
-                ", upd_date = @upd_date" +
+                ", change_date_right = @change_date_right" +
+                ", upd_date = @upd_date" +                
                 " WHERE machine_no = @machine_no");
 
             int updateCount = 0;
@@ -117,11 +123,13 @@ namespace BladderChange.Service.Data.Model.Facades
                         cmd.Parameters.Add(new SqlParameter("bladder_limit_left", SqlDbType.Int));
                         cmd.Parameters.Add(new SqlParameter("bladder_count_left", SqlDbType.Int));
                         cmd.Parameters.Add(new SqlParameter("last_change_left", SqlDbType.Int));
+                        cmd.Parameters.Add(new SqlParameter("change_date_left", SqlDbType.DateTime));
                         cmd.Parameters.Add(new SqlParameter("bladder_name_right", SqlDbType.VarChar,20));
                         cmd.Parameters.Add(new SqlParameter("bladder_limit_right", SqlDbType.Int));
                         cmd.Parameters.Add(new SqlParameter("bladder_count_right", SqlDbType.Int));
                         cmd.Parameters.Add(new SqlParameter("last_change_right", SqlDbType.Int));
-                        cmd.Parameters.Add(new SqlParameter("upd_date", SqlDbType.DateTime));
+                        cmd.Parameters.Add(new SqlParameter("change_date_right", SqlDbType.DateTime));
+                        cmd.Parameters.Add(new SqlParameter("upd_date", SqlDbType.DateTime));                        
                         cmd.Parameters.Add(new SqlParameter("machine_no", SqlDbType.VarChar,10));
 
                         foreach (var info in infoList)
@@ -133,11 +141,13 @@ namespace BladderChange.Service.Data.Model.Facades
                                 cmd.Parameters["bladder_limit_left"].Value = info.BladderLimitLeft;
                                 cmd.Parameters["bladder_count_left"].Value = info.BladderCountLeft;
                                 cmd.Parameters["last_change_left"].Value = info.LastChangeLeft;
+                                cmd.Parameters["change_date_left"].Value = info.ChangeDateLeft;
                                 cmd.Parameters["bladder_name_right"].Value = info.BladderNameRight;
                                 cmd.Parameters["bladder_limit_right"].Value = info.BladderLimitRight;
                                 cmd.Parameters["bladder_count_right"].Value = info.BladderCountRight;
                                 cmd.Parameters["last_change_right"].Value = info.LastChangeRight;
-                                cmd.Parameters["upd_date"].Value = info.UpdDate;
+                                cmd.Parameters["change_date_right"].Value = info.ChangeDateRight;
+                                cmd.Parameters["upd_date"].Value = info.UpdDate;                                
                                 cmd.Parameters["machine_no"].Value = info.MachineNo;
 
                                 updateCount += cmd.ExecuteNonQuery();
@@ -215,12 +225,14 @@ namespace BladderChange.Service.Data.Model.Facades
                                     if (deltaLeft < 0 || deltaLeft > 2)
                                     {
                                         info.LastChangeLeft = info.BladderCountLeft;
+                                        info.ChangeDateLeft = DateTime.Now;
                                     }
 
                                     int deltaRight = newBladderCountRight - info.BladderCountRight;
                                     if (deltaRight < 0 || deltaRight > 2)
                                     {
                                         info.LastChangeRight = info.BladderCountRight;
+                                        info.ChangeDateRight = DateTime.Now;
                                     }
 
                                     info.BladderCountRight = newBladderCountRight;

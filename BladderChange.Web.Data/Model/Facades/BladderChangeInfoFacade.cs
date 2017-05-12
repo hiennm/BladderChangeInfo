@@ -21,10 +21,12 @@ namespace BladderChange.Web.Data.Model.Facades
                 ",[bladder_limit_left]" +
                 ",[bladder_count_left]" +
                 ",[last_change_left]" +
+                ",[change_date_left]" +
                 ",[bladder_name_right]" +
                 ",[bladder_limit_right]" +
                 ",[bladder_count_right]" +
                 ",[last_change_right]" +
+                ",[change_date_right]" +
                 ",[status]" +
                 ",[ins_date]" +
                 ",[upd_date]" +
@@ -50,13 +52,15 @@ namespace BladderChange.Web.Data.Model.Facades
                                     BladderLimitLeft = reader.IsDBNull(3)?0:reader.GetInt32(3),
                                     BladderCountLeft = reader.IsDBNull(4) ? 0 : reader.GetInt32(4),
                                     LastChangeLeft = reader.IsDBNull(5) ? 0 : reader.GetInt32(5),
-                                    BladderNameRight = reader.IsDBNull(6) ? null : reader.GetString(6),
-                                    BladderLimitRight = reader.IsDBNull(7) ? 0 : reader.GetInt32(7),
-                                    BladderCountRight = reader.IsDBNull(8) ? 0 : reader.GetInt32(8),
-                                    LastChangeRight = reader.IsDBNull(9) ? 0 : reader.GetInt32(9),                                    
-                                    Status = reader.GetBoolean(10),
-                                    InsDate = reader.GetDateTime(11),
-                                    UpdDate = reader.GetDateTime(12)
+                                    ChangeDateLeft = reader.IsDBNull(6) ? DateTime.Now : reader.GetDateTime(6),
+                                    BladderNameRight = reader.IsDBNull(7) ? null : reader.GetString(7),
+                                    BladderLimitRight = reader.IsDBNull(8) ? 0 : reader.GetInt32(8),
+                                    BladderCountRight = reader.IsDBNull(9) ? 0 : reader.GetInt32(9),
+                                    LastChangeRight = reader.IsDBNull(10) ? 0 : reader.GetInt32(10),
+                                    ChangeDateRight = reader.IsDBNull(11) ? DateTime.Now : reader.GetDateTime(11),
+                                    Status = reader.GetBoolean(12),
+                                    InsDate = reader.GetDateTime(13),
+                                    UpdDate = reader.GetDateTime(14)
                                 };
 
                                 list.Add(info);

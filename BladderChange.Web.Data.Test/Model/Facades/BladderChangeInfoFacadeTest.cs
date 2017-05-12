@@ -16,7 +16,7 @@ namespace BladderChange.Service.Data.Test
         {
             var facade = new BladderChangeInfoFacade();
             var list = facade.GetLastestBladderChangeInfoList();
-            Assert.AreEqual(8, list.Count);
+            Assert.AreEqual(25, list.Count);
         }
     }
 }

@@ -26,15 +26,16 @@
         <div id="content">
             
             @RenderBody()
-
             
+            <div id="footer">
+                <div class="container" style="text-align:center;">
+                    <p class="muted credit">&copy; @DateTime.Now.Year - BTMV</p>
+                </div>
+            </div>
+
         </div>
 
-        <div id="footer">
-            <div class="container" style="text-align:center;">
-                <p class="muted credit">&copy; @DateTime.Now.Year - BTMV</p>
-            </div>
-        </div>
+        
     </div>
 </body>
 </html>

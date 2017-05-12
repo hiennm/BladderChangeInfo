@@ -68,7 +68,8 @@ function loadBladderInfo() {
                 $("#bladder-info  tbody tr").remove();
 
                 for (var i = 0; i < infoList.length; i++) {
-                    var info = infoList[i];
+                    var info = infoList[i];                    
+
                     var newRow = $('<tr/>').addClass("content-row");
                     if (i % 2 !== 1)
                         newRow.addClass('odd-row');
@@ -104,10 +105,8 @@ function loadBladderInfo() {
                     newRow.append($('<td/>').text(info.BladderCountLeft).addClass(indicatorLeft));
                     newRow.append($('<td/>').text(remainLeft).addClass(indicatorLeft));
                     newRow.append($('<td/>').text(info.BladderCountRight).addClass(indicatorRight));
-                    newRow.append($('<td/>').text(remainRight).addClass(indicatorRight));
-                    var s = new String(info.UpdDate);
-                    s = s.replace('T', ' ');
-                    newRow.append($('<td/>').text(s));
+                    newRow.append($('<td/>').text(remainRight).addClass(indicatorRight));                    
+                    newRow.append($('<td/>').text(formatDate(info.UpdDate)));
 
                     $("#bladder-info").append(newRow);
                 }
@@ -119,6 +118,12 @@ function loadBladderInfo() {
 
 }
 
+function formatDate(date) {
+    var d = new Date(date);
+    return d.getFullYear() + '-' + (d.getMonth() + 1) + '-' + d.getDay() + ' '
+        + (d.getHours() < 10 ? '0' + d.getHours() : d.getHours()) + ':'
+        + (d.getMinutes() < 10 ? '0' + d.getMinutes() : d.getMinutes());
+}
 /**
  * comparision function to sort bladder info items
  * @param {any} infoX

@@ -15,13 +15,16 @@ namespace BladderChange.Service.Data.Model.Entities
         public int BladderLimitLeft { get; set; }
         public int BladderCountLeft { get; set; }
         public int LastChangeLeft { get; set; }
+        public DateTime ChangeDateLeft { get; set; }
         public string BladderNameRight { get; set; }
         public int BladderLimitRight { get; set; }
         public int LastChangeRight { get; set; }
         public int BladderCountRight { get; set; }
+        public DateTime ChangeDateRight { get; set; }
         public bool Status { get; set;}
         public DateTime InsDate { get; set; }
         public DateTime UpdDate { get; set; }
+        
 
         /// <summary>
         /// Calculated field for tracking item status

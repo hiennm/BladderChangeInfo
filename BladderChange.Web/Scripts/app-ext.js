@@ -105,17 +105,25 @@ function loadBladderInfo() {
                     newRow.append($('<td/>').text(remainLeft).addClass(indicatorLeft));
 
                     //added for extended version
-                    newRow.append($('<td/>').text(info.LastChangeLeft));
+                    newRow.append($('<td/>').text(info.LastChangeLeft == 0 ? '' : info.LastChangeLeft));
+                    var tmp = '';
+                    if (info.LastChangeLeft != 0) {
+                        tmp = formatDate(info.ChangeDateLeft);                        
+                    }                        
+                        newRow.append($('<td/>').text(tmp));
 
                     newRow.append($('<td/>').text(info.BladderCountRight).addClass(indicatorRight));                    
                     newRow.append($('<td/>').text(remainRight).addClass(indicatorRight));
 
                     //added for extended version
-                    newRow.append($('<td/>').text(info.LastChangeRight));
+                    newRow.append($('<td/>').text(info.LastChangeRight == 0 ? '' : info.LastChangeRight));                    
+                    tmp = '';
+                    if (info.LastChangeRight != 0) {
+                        tmp = formatDate(info.ChangeDateRight);                        
+                    }
+                    newRow.append($('<td/>').text(tmp));
 
-                    var s = new String(info.UpdDate);
-                    s = s.replace('T', ' ');
-                    newRow.append($('<td/>').text(s));
+                    newRow.append($('<td/>').text(formatDate(info.UpdDate)));
 
                     $("#bladder-info").append(newRow);
                 }
@@ -126,6 +134,15 @@ function loadBladderInfo() {
         });
 
 }
+
+function formatDate(date) {
+    var d = new Date(date);
+    return d.getFullYear() + '-' + (d.getMonth() + 1) + '-' + d.getDay() + ' '
+        + (d.getHours() < 10 ? '0' + d.getHours() : d.getHours()) + ':'
+        + (d.getMinutes() < 10 ? '0' + d.getMinutes() : d.getMinutes());
+}
+
+
 
 /**
  * comparision function to sort bladder info items

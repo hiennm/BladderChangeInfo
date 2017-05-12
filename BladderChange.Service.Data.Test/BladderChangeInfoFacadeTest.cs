@@ -24,7 +24,7 @@ namespace BladderChange.Service.Data.Test {
             var facade = new BladderChangeInfoFacade();
             var list = facade.GetActiveMachineList();
             Assert.IsNotNull(list);
-            Assert.AreEqual(8, list.Count);
+            Assert.AreEqual(25, list.Count);
         }
 
         [TestMethod]
